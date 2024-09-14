@@ -2,7 +2,7 @@
 
 import { useState, MouseEvent, useCallback } from "react";
 
-function throttle<T extends (...args: any[]) => any>(
+function throttle<T extends (...args: never[]) => void>(
   func: T,
   delay: number
 ): (...args: Parameters<T>) => void {
