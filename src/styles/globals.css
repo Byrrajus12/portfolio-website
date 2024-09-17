@@ -15,9 +15,17 @@
 }
 
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: '--font-poppins', Arial, Helvetica, sans-serif;
+}
+
+main {
+  flex: 1;
 }
 
 @layer utilities {
@@ -34,19 +42,49 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
 .typewriter {
   color: white;
-  font-size: 25px;
+  font-size: 24px;
   font-family: 'Montserrat';
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   width: 8ch; /* Adjust this based on the length of your text */
-  animation: typing 2s steps(11) 1s 1 normal both, blink 1000ms infinite; /* Removed steps() from blink */
+  animation: typing 2s steps(12) 1s 1 normal both, blink 1000ms infinite; /* Removed steps() from blink */
+}
+
+.header{
+  color: 'white';
+  font-size: 20px;
+  font-family: 'Montserrat'; 
+  font-weight: 300;
+  word-wrap: 'break-word';
+  text-decoration: 'none';
+}
+
+.namepos{
+  width: '96%';
+  height: '100%';
+  padding-left: 26; 
+  padding-right: 20;
+  padding-top: 20; 
+  padding-bottom: 20;
+  justify-content: 'space-between';
+  align-items: 'center';
+  display: 'inline-flex';
+}
+
+.navpos{
+  width: '20%';
+  height: '100%';
+  justify-content: 'flex-start';
+  align-items: 'center';
+  gap: 25;
+   display: 'flex';
 }
 
 @keyframes typing {
@@ -142,3 +180,15 @@ button:hover {
   color: rgb(203 213 225);
 }
 
+
+.poppins {
+  font-family: var(--font-poppins);
+}
+
+.vastshadow {
+  font-family: var(--font-vs);
+}
+
+.cutivemono {
+  font-family: var(--font-cm);
+}
