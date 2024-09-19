@@ -1,18 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import profilePic from './img.png'
-// export default function Navbar() {
-//   return (
-//     <nav className="bg-gray-800 text-white p-4">
-//       <div className="namepos">
-//         <Link href="/" className="typewriter">Sai Byrraju</Link>
-//           <Link href="/work" className="header">Work</Link>
-//           <Link href="/projects" className="header">Projects</Link>
-//           <Link href="/resume" className="header">Resume</Link>
-//       </div>
-//     </nav>
-//   );
-// }
+
 export default function Navbar() {
   return (
   <nav className="bg-black text-white p-4">
@@ -24,13 +13,7 @@ export default function Navbar() {
             <Link href="/work" className="header">Work</Link>
             <Link href="/projects" className="header">Projects</Link>
               <Link href="/resume" className="header">Resume</Link>
-              {/* <Image src={require('./img.png')} alt="icon" style={{ width: 128, height: 128 }} /> */}
-              <Image
-      src= {profilePic}
-      width={56}
-      height={28}
-      alt="Picture of the author"
-    />
+              <Image src= {profilePic} width={56} height={28} alt="Picture of the author"/>
         </div>
       </div>
     </nav>

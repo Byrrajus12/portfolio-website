@@ -25,7 +25,7 @@ export default function WorkPage() {
 
   return (
 <section className="p-8">
-      <h1 className="text-4xl font-bold mb-6">Work Experience</h1>
+      <h1 className="text-4xl text-white font-bold mb-6">Work Experience</h1>
       <div className="space-y-6">
         {experiences.map((experience, index) => (
             

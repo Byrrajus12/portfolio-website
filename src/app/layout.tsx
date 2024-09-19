@@ -25,10 +25,10 @@ const vast_shadow = Vast_Shadow({
     });
 
 const cutive_mono = Cutive_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-cm',
-  weight: ['400']
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-cm',
+    weight: ['400']
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-black flex flex-col min-h-screen relative">
         <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} staticity={60} ease={40} />
         <Navbar />
-        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable} ` } >{children}</main>
+        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable}` } >{children}</main>
       </body>
     </html>
   );
