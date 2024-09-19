@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Head from 'next/head';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
-import { Cutive_Mono, Poppins, Vast_Shadow, Montserrat } from 'next/font/google';
+import { Cutive_Mono, Poppins, Vast_Shadow, Montserrat } from '@next/font/google';
 import Particles from '@/components/particles'; 
 
 export const metadata = {
