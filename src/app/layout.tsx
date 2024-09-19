@@ -36,6 +36,7 @@ const montserrat = Montserrat({
   style: ['italic'],
   display: 'swap',
   variable: '--font-montserrat',
+  fallback: ['Montserrat'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']});
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+    
       </Head>
       <body className="bg-black flex flex-col min-h-screen relative">
         <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} staticity={60} ease={40} />
