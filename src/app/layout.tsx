@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
       <body className="bg-black flex flex-col min-h-screen relative">
-        <Particles className="absolute inset-0 -z-10" quantity={70} staticity={60} ease={40} />
+        <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} staticity={60} ease={40} />
         <Navbar />
         <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable} ` } >{children}</main>
       </body>
