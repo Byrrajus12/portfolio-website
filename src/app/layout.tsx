@@ -4,7 +4,6 @@ import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import { Cutive_Mono, Poppins, Vast_Shadow } from 'next/font/google';
 import Particles from '@/components/particles'; // Import the Particles component
-import { IconBrandLinkedin, IconBrandGithub } from '@tabler/icons-react';
 
 export const metadata = {
   title: 'Sai Byrraju',
