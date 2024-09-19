@@ -3,6 +3,9 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import { Cutive_Mono, Poppins, Vast_Shadow } from 'next/font/google';
+import Particles from '@/components/particles'; // Import the Particles component
+import { IconBrandLinkedin, IconBrandGithub } from '@tabler/icons-react';
+
 export const metadata = {
   title: 'Sai Byrraju',
   description: 'My personal portfolio',
@@ -36,12 +39,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      <body className="bg-black flex flex-col min-h-screen">
+      <body className="bg-black flex flex-col min-h-screen relative">
+        <Particles className="absolute inset-0 -z-10" quantity={70} staticity={60} ease={40} />
         <Navbar />
         <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable} ` } >{children}</main>
-        <footer className="bg-black text-white text-center ">
-          <p>&copy; {new Date().getFullYear()} My Portfolio</p>
-        </footer>
       </body>
     </html>
   );
