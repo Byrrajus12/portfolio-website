@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import Head from 'next/head';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
-import { Cutive_Mono, Poppins, Vast_Shadow } from 'next/font/google';
-import Particles from '@/components/particles'; // Import the Particles component
+import { Cutive_Mono, Poppins, Vast_Shadow, Montserrat } from 'next/font/google';
+import Particles from '@/components/particles'; 
 
 export const metadata = {
   title: 'Sai Byrraju',
@@ -31,6 +31,13 @@ const cutive_mono = Cutive_Mono({
     weight: ['400']
 });
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  style: ['italic'],
+  display: 'swap',
+  variable: '--font-montserrat',
+  weight: ['300', '400']});
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
@@ -41,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-black flex flex-col min-h-screen relative">
         <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} staticity={60} ease={40} />
         <Navbar />
-        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable}` } >{children}</main>
+        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable} ${montserrat.variable}` } >{children}</main>
       </body>
     </html>
   );
