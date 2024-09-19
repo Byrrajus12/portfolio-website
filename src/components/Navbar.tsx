@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import profilePic from './img.png'
+import '../styles/globals.css';
+
 
 export default function Navbar() {
   return (
@@ -10,7 +12,7 @@ export default function Navbar() {
           <Link href="/" className="typewriter">Sai Byrraju</Link>       
         </div>
         <div style={{ justifyContent: 'flex-start', alignItems: 'center', gap: 25, display: 'flex' }}>
-            <Link href="/work" className="header">Work</Link>
+            <Link href="/work" className='header'>Work</Link>
             <Link href="/projects" className="header">Projects</Link>
               <Link href="/resume" className="header">Resume</Link>
               <Image src= {profilePic} width={56} height={28} alt="Picture of the author"/>
