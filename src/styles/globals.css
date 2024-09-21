@@ -21,7 +21,7 @@ body {
   margin: 0;
   color: var(--foreground);
   background: var(--background);
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -50,6 +50,7 @@ main {
   color: white;
   font-size: 24px;
   font-family: 'Montserrat';
+  font-display: swap;
   font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
