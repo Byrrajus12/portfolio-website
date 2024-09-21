@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image'
-import profilePic from './img.png'
-// import '@/styles/globals'
-
+import React from 'react';
+import profilePic from '@/public/img.png'
 
 export default function Navbar() {
   return (
@@ -12,9 +11,9 @@ export default function Navbar() {
           <Link href="/" className="typewriter" style={{fontFamily: 'Montserrat'}}>Sai Byrraju</Link>       
         </div>
         <div style={{ justifyContent: 'flex-start', alignItems: 'center', gap: 25, display: 'flex' }}>
-            <Link href="/work" style={{ color: 'white', fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 300, wordWrap: 'break-word' }}>Work</Link>
-              <Link href="/projects" style={{ color: 'white', fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 300, wordWrap: 'break-word' }}>Projects</Link>
-              <Link href="/resume" className='poppins' style={{ color: 'white', fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 300, wordWrap: 'break-word' }}>Resume</Link>
+            <Link href="/work" style={{ color: 'white', fontFamily: 'montserrat', fontSize: '20px', fontWeight: 300, wordWrap: 'break-word' }}>Work</Link>
+              <Link href="/projects" style={{ color: 'white', fontFamily: 'montserrat', fontSize: '20px', fontWeight: 300, wordWrap: 'break-word' }}>Projects</Link>
+              <Link href="/resume" style={{ color: 'white', fontFamily: 'montserrat', fontSize: '20px', fontWeight: 300, wordWrap: 'break-word' }}>Resume</Link>
               <Image src= {profilePic} width={56} height={28} alt="Picture of the author"/>
         </div>
       </div>

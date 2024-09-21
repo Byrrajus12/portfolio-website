@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import Head from 'next/head';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
-import { Cutive_Mono, Poppins, Vast_Shadow, Montserrat } from '@next/font/google';
+import { Cutive_Mono, Poppins, Vast_Shadow } from '@next/font/google';
+import LocalFont from "@next/font/local";
 import Particles from '@/components/particles'; 
 
 export const metadata = {
@@ -31,13 +32,10 @@ const cutive_mono = Cutive_Mono({
     weight: ['400']
 });
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  style: ['italic'],
-  display: 'swap',
-  variable: '--font-montserrat',
-  fallback: ['Montserrat'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']});
+const montserrat = LocalFont({
+    src: "../public/fonts/Montserrat-VariableFont_wght.ttf",
+    variable: "--font-montserrat",
+  });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
