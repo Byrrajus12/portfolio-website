@@ -21,7 +21,7 @@ body {
   margin: 0;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -49,14 +49,14 @@ main {
 .typewriter {
   color: white;
   font-size: 24px;
-  font-family: var(--font-montserrat);
+  font-family: 'Montserrat';
   font-display: swap;
   font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
-  width: 8ch; /* Adjust this based on the length of your text */
-  animation: typing 2s steps(12) 1s 1 normal both, blink 1000ms infinite; /* Removed steps() from blink */
+  width: 8ch; 
+  animation: typing 2s steps(12) 1s 1 normal both, blink 1000ms infinite;
 }
 
 .header{
@@ -95,7 +95,7 @@ main {
     width: 0ch;
   }
   to {
-    width: 8ch; /* Adjust this based on the length of your text */
+    width: 8ch; 
   }
 }
 
