@@ -33,7 +33,7 @@ const cutive_mono = Cutive_Mono({
 });
 
 const montserrat = LocalFont({
-    src: "../public/fonts/Montserrat-VariableFont_wght.ttf",
+    src: "../../public/fonts/Montserrat-VariableFont_wght.ttf",
     variable: "--font-montserrat",
   });
 
