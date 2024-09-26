@@ -71,9 +71,9 @@ export default function Navbar() {
             gap: 25,
             display: 'flex'
           }}>
-            <Link href="/work" className="montserrat text-zinc-400 hover:text-zinc-100" style={{ fontSize: '20px', fontWeight: 300 }}>Work</Link>
-            <Link href="/projects" className="montserrat text-zinc-400 hover:text-zinc-100" style={{ fontSize: '20px', fontWeight: 300 }}>Projects</Link>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="montserrat text-zinc-400 hover:text-zinc-100" style={{ fontSize: '20px', fontWeight: 300 }}> Resume </a>
+            <Link href="/work" className="montserratVariablefontWght text-zinc-400 hover:text-zinc-100" style={{ fontSize: '20px', fontWeight: 300 }}>Work</Link>
+            <Link href="/projects" className="montserratVariablefontWght text-zinc-400 hover:text-zinc-100" style={{ fontSize: '20px', fontWeight: 300 }}>Projects</Link>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="montserratVariablefontWght text-zinc-400 hover:text-zinc-100" style={{ fontSize: '20px', fontWeight: 300 }}> Resume </a>
             <Image src={profilePic} width={56} height={28} alt="SB logo" />
           </div>
         </div>

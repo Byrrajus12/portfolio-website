@@ -25,7 +25,7 @@ const projects = [
     'Designed to ensure scalability and efficiency for processing large datasets.',
     'Conducted testing to verify functionality, ensuring the DBMS performs for a wide range of queries and edge cases.',
   ] },
-  { id: 2, title: 'Grocery App Development', description: 'Developed a grocery app in Android Studio.', technologies: ['Java', 'Android', 'Firebase'], imageUrl: '/blockdiagram.png', content: [
+  { id: 2, title: 'Smart Grocery Manager', description: 'Developed a grocery app in Android Studio.', technologies: ['Java', 'Android', 'Firebase'], imageUrl: '/blockdiagram.png', content: [
     'Designed and implemented a user-friendly grocery management app with multi-screen navigation.',
     'Optimized user flow through intent-based transitions, allowing for smooth navigation.'
   ] },

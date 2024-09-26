@@ -199,3 +199,11 @@ button:hover {
 .montserrat {
   font-family: var(--font-montserrat);
 }
+
+@font-face {
+  font-family: "montserratVariablefontWght";
+  src: url("../../public/fonts/Montserrat-VariableFont_wght.ttf");
+}
+.montserratVariablefontWght {
+  font-family: "montserratVariablefontWght", sans-serif;
+}

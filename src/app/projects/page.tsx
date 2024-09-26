@@ -1,11 +1,10 @@
 import Link from 'next/link';
-// import Card from '../../components/Card';
 import { Card } from '@/components/staticCard';
 
 const projects = [
-  { id: 1, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built in SQLite3 module.' },
-  { id: 2, title: 'Grocery App Development', description: 'Developed a grocery app in Android Studio, focusing on improving user experience and integrating features for efficient grocery management.' },
-  { id: 3, title: 'Bug Squash', description: 'Designed and developed a complex Bug squash program from scratch. Created a dynamic user interface and implemented a debugging strategy to deliver a fully functional game.' },
+  { id: 1, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built in SQLite3 module with complex SQL operations.' },
+  { id: 2, title: 'Smart Grocery Manager', description: 'Built a smart grocery management app focused on user experience and efficient grocery management.' },
+  { id: 3, title: 'Bug Squash', description: 'Designed and developed a complex Bug squash program with a dynamic user interface and a very engaging experience.' },
   { id: 4, title: 'saibyrraju.vercel.app', description: "The website you're looking at" },
 ];
 
