@@ -196,10 +196,6 @@ button:hover {
   font-family: var(--font-cm);
 }
 
-.montserrat {
-  font-family: var(--font-montserrat);
-}
-
 @font-face {
   font-family: "montserratVariablefontWght";
   src: url("../../public/fonts/Montserrat-VariableFont_wght.ttf");
