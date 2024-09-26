@@ -3,7 +3,6 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import { Cutive_Mono, Poppins, Vast_Shadow } from '@next/font/google';
-import LocalFont from "@next/font/local";
 import Particles from '@/components/particles'; 
 
 export const metadata = {
@@ -32,11 +31,6 @@ const cutive_mono = Cutive_Mono({
     weight: ['400']
 });
 
-const montserrat = LocalFont({
-    src: "../../public/fonts/Montserrat-VariableFont_wght.ttf",
-    variable: "--font-montserrat",
-  });
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
@@ -48,7 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-black flex flex-col min-h-screen relative">
         <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} staticity={60} ease={40} />
         <Navbar />
-        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable} ${montserrat.variable}` } >{children}</main>
+        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable}` } >{children}</main>
       </body>
     </html>
   );

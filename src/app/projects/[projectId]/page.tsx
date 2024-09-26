@@ -1,24 +1,9 @@
-// "use client";
-
-// import { useParams } from 'next/navigation';
-
-// export default function ProjectPage() {
-//   const { projectId } = useParams();
-
-//   return (
-//     <section>
-//       <h2>Project {projectId}</h2>
-//       <p>This is the details page for project {projectId}.</p>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
-// Dummy projects data to fetch from
+// projects data to fetch from
 const projects = [
   { id: 1, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built-in SQLite3 module.', technologies: ['Python', 'SQLite', 'Data Structures'], imageUrl: '/sqlitepython.png', content: [
     'Developed a DBMS in Python that supports complex SQL operations without using SQL.',
