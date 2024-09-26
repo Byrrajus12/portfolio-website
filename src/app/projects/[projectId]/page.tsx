@@ -21,7 +21,7 @@ import Link from 'next/link';
 // Dummy projects data to fetch from
 const projects = [
   { id: 1, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built-in SQLite3 module.', technologies: ['Python', 'SQLite', 'Data Structures'], imageUrl: '/sqlitepython.png', content: [
-    'Developed a DBMS in Python that supports complex SQL operations without using SQL',
+    'Developed a DBMS in Python that supports complex SQL operations without using SQL.',
     'Designed to ensure scalability and efficiency for processing large datasets.',
     'Conducted testing to verify functionality, ensuring the DBMS performs for a wide range of queries and edge cases.',
   ] },
