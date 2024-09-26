@@ -1,0 +1,158 @@
+[
+    {
+      "imageUrl": "/llm-verification.png",
+      "title": "Neuro-Symbolic Program Synthesis with LLMs and Formal Methods",
+      "slug": "llm-verification",
+      "description": "Combining AI and Formal Verification for Accurate Program Synthesis",
+      "technologies": [ "Python", "PyGame", "SMT Solver", "Z3", "GPT-3.5", "GPT-4" ],
+      "githubLink": "https://github.com/ayaanmayooq/LLM-verification-CEGIS",
+      "content": [
+        "Developed a neuro-symbolic approach integrating large language models (LLMs) and formal verification for program synthesis.",
+        "Implemented a mutation engine and Counterexample-Guided Inductive Synthesis (CeGIS) to refine program generation accuracy.",
+        "Used LLMs to generate candidate programs from specifications, and verified their correctness using a custom Python verification engine.",
+        "Validated the system using the BlocksWorld environment, improving solve rate and efficiency with the addition of mutation-based local search.",
+        "Showcased potential for expanding the framework to more complex program synthesis tasks in the future."
+      ]
+    },
+    {
+      "imageUrl": "/exaimination.png",
+      "title": "exAImination",
+      "slug": "exaimination",
+      "description": "Elevate Your Learning: AI-Powered Test Generator for Text",
+      "technologies": [ "Next.js", "Node", "Tailwind CSS", "OpenAI", "Git" ],
+      "githubLink": "https://github.com/ayaanmayooq/eduhack",
+      "content": [
+        "Designed and developed a dynamic React/Node web application tailored to empower students in their preparation efforts.",
+        "Implemented an AI-powered feature that generates customized quizzes from text, fostering effective learning.",
+        "Leveraged the immense potential of GPT-3.5 Turbo through fine-tuning on a diverse range of 300+ text materials and their corresponding quizzes. The topics span the spectrum from high-school to college-level education.",
+        "Seamlessly integrated API calls to the fine-tuned model into a web interface, allowing students to access and benefit from AI-generated quizzes.",
+        "Currently engaged in ongoing testing and refinement to ensure optimal performance and user experience."
+      ]
+    },
+    {
+      "imageUrl": "/chrome-dino.png",
+      "title": "DinoAI",
+      "slug": "dinoai",
+      "description": "Reinforcement learning agent for the chrome dino game",
+      "technologies": [ "Reinforcement Learning", "OpenAI Gym", "PyTorch" ],
+      "githubLink": "https://github.com/ayaanmayooq/RLTut",
+      "content": [
+        "Developed an AI agent to play the chrome dino game using reinforced learning.",
+        "Employed PyTorch and stable-baselines3 to develop a Deep Q-Network (DQN) to guide the agent's decision-making process. Utilized Q-learning to estimate optimal actions and maximize cumulative rewards.",
+        "Utilized the OpenAI Gym framework to set up the Chrome Dino game environment, providing a standardized and flexible platform for reinforcement learning experimentation.",
+        "Utilized Python in conjunction with the MSS screen capture library to efficiently capture and process training state space inputs, facilitating the reinforcement learning (RL) training process.",
+        "Captured real-time game screen data and employed Tesseract OCR for live text recognition to extract crucial game information and PyDirectInput to simulate keypresses and control the game based on the agent's decisions."
+      ]
+    },
+    {
+      "imageUrl": "/robinhood.jpeg",
+      "title": "Robinhood Trading Bot",
+      "slug": "robinhood",
+      "description": "Automated real-time stock trading on robinhood",
+      "technologies": [ "Python", "Robinhood API", "Automation" ],
+      "githubLink": "https://github.com/ayaanmayooq/autostocks",
+      "content": [
+        "The Robinhood Trading Bot is an automated solution designed for real-time stock trading on the Robinhood platform.",
+        "**Customizable Strategies:** The bot comes with a variety of customizable strategies, including weighted average, exponential, and other markers.",
+        "**Real-Time Stock Data:** It provides real-time stock data with minimal delay, allowing users to make informed decisions based on the latest market information.",
+        "**Paper Trading Environment:** The bot includes a paper trading testing environment. This feature enables users to test different strategies, simulate historical data, and assess potential profits.",
+        "**Historical Data Simulations:** Users can evaluate the performance of their strategies through historical data simulations. This helps in understanding how strategies would have performed in the past.",
+        "Whether you're a seasoned trader or just starting, the Robinhood Trading Bot offers a powerful toolset for automated trading and strategy testing."
+      ]
+    },
+    {
+      "imageUrl": "/flexvr.png",
+      "title": "Flexible VR Training",
+      "slug": "flexvrtraining",
+      "description": "VR application that provided a safe and innovative virtual training space, revolutionizing AI-enhanced training",
+      "technologies": [ "Unity", "Angular", "Node.js", "Azure", "WebGL", "Meta Quest", "OpenAI" ],
+      "githubLink": "",
+      "content": [
+        "Built using Unity, this VR application offers a dynamic training space that integrates seamlessly with artificial intelligence.",
+        "We fine-tuned GPT-3 Davinci with Python to improve responses, resulting in a more efficient and responsive AI experience.",
+        "Complementing the VR aspect, we developed a user-friendly web application for training replay. Utilizing Angular, Node.js, and Azure SQL with blob storage, it provides a robust learning interface.",
+        "To enhance interactivity, we integrated a WebGL build, allowing users to experience a free-cam training replay system. Explore a world where innovation meets practical application."
+      ]
+    },
+    {
+      "imageUrl": "/img-class.png",
+      "title": "CNN Image Classification",
+      "slug": "cnn",
+      "description": "CUDA accelerated CNN training for image classification",
+      "technologies": ["Python", "CUDA", "PyTorch", "OpenCV", "Deep Learning" ],
+      "githubLink": "",
+      "content": [
+        "Constructed custom networks using PyTorch provided Sequentials and layers for image classification.",
+        "Ran tests to optimize all the training hyperparameters for the NNs and plots to visualize the performance.",
+        "Custom NN for Fashion MNIST using 2 convolution, 3 fully connected layers, and 1 dropout layer that uses max pooling.",
+        "Achieved a 92.2% accuracy for a 6-layer CNN trained using CUDA to harness GPU acceleration for enhanced performance.",
+        "Visualized the activation layer for the fashion-MNIST dataset for better understanding about how the CNN interprets input data. Also used to evaluate the feature extraction and detect overfitting."
+      ]
+    },
+    {
+      "imageUrl": "/customnn.png",
+      "title": "Neural Network from Scratch",
+      "slug": "customnn",
+      "description": "Custom neural network featuring custom-made ReLU, softmax classification, linear, and L2 loss layers for CIFAR-10 image classification",
+      "technologies": ["Python", "Computer Vision", "Deep Learning"],
+      "githubLink": "",
+      "content": [
+        "Designed and implemented a custom neural network from scratch, featuring custom-made ReLU, softmax classification, linear, and L2 loss layers for CIFAR-10 image classification.",
+        "Optimized training parameters to achieve a solid 65% accuracy on the custom model.",
+        "Conducted image fooling experiments to deepen the understanding of neural network image interpretation.",
+        "Integrated PyTorch models for comparative analysis, achieving a high 91% accuracy in image classification."
+      ]
+    },
+    {
+      "imageUrl": "/stitching.png",
+      "title": "Panorama Stitching",
+      "slug": "panorama",
+      "description": "Custom Python library to perform convolution, edge detection, corner and blob detection, and feature matching",
+      "technologies": ["Python", "Computer Vision"],
+      "githubLink": "",
+      "content": [
+        "Developed an image stitching program that merges two or more input images into panoramic views through the utilization of SIFT feature matching.",
+        "Engineered a custom Python library to perform intricate image processing tasks, including convolution, edge detection, corner and blob detection, as well as feature matching.",
+        "Employed advanced homography transform fitting with RANSAC to align images accurately, resulting in multiple-image panorama stitching for a seamless viewing experience."
+      ]
+    },
+    {
+      "imageUrl": "/fakenews.jpg",
+      "title": "Fake News Detection",
+      "slug": "fakenews",
+      "description": "Using machine learning concepts to devise the best binary classification model for the task",
+      "technologies": ["Python", "PyTorch", "Machine Learning", "Data Engineering"],
+      "githubLink": "",
+      "content": [
+        "Conducted an extensive training, analysis and performance comparison of various machine learning models, including Support Vector Machines, Naive Bayes Classifier, Decision Trees, and Neural Networks, to effectively detect and combat the proliferation of fake news.",
+        "Implemented a comprehensive preprocessing pipeline that included filtering stop words and harnessing the power of tfidf vectorization and BERT embeddings to prepare the input data for model training.",
+        "Leveraged both custom and pre-defined models from leading machine learning frameworks such as PyTorch, TensorFlow, and scikit-learn, resulting in 98% accuracy on a homogeneous fake news detection dataset and 79% in general."
+      ]
+    },
+    {
+      "imageUrl": "/placeholder.jpg",
+      "title": "Animation using OOP in C++",
+      "slug": "cppanimation",
+      "description": "Using machine learning concepts to devise the best binary classification model for the task",
+      "technologies": ["C++", "OOP", "WxWidgets", "Animation"],
+      "githubLink": "",
+      "content": [
+        "Utilized OOP principles in C++ to design robust mechanics for handling animation frames and rendering.",
+        "Implemented a sophisticated system for creating captivating animations by setting keyframes and seamlessly tweening between them.",
+        "The project showcases the versatility of C++ in crafting dynamic and visually appealing animations, providing a foundation for further exploration in the realm of computer graphics.",
+        "Through meticulous design and implementation, this project offers insights into the intricate world of animation, demonstrating the power of OOP in creating expressive and visually stunning motion sequences."
+      ]
+    },
+    {
+      "imageUrl": "/placeholder.jpg",
+      "title": "Spongebob Shooting Game",
+      "slug": "spongebobshooting",
+      "description": "Using machine learning concepts to devise the best binary classification model for the task",
+      "technologies": ["C++", "OOP", "UML"],
+      "githubLink": "",
+      "content": [
+        "Crafted an engaging and interactive gaming application that offers users a unique experience. Players can control character rotation with mouse input and engage in shooting at UML box objects. The game keeps a tally of objects hit and calculates a score based on user performance.",
+        "Demonstrated proficiency in software design by creating a comprehensive UML design and seamlessly translating it into a feature-rich gaming application. Utilized advanced C++ design patterns to develop and animate game elements, delivering a dynamic and immersive gameplay experience."
+      ]
+    }
+  ]
