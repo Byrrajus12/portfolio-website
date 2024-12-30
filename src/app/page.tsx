@@ -20,13 +20,13 @@ export default function HomePage() {
         {' '}Sai<br/>
       </span>
       <span className='vastshadow'  style={{ color: 'white', fontSize: '40px', fontWeight: 400, wordWrap: 'break-word' }}>
-        a computer science student
+        a computer science grad
       </span>
           <span  className='poppins'  style={{ color: 'white', fontSize: '40px', fontWeight: 300, wordWrap: 'break-word' }}>
           {' '}
           </span>
-          <span className='poppins'  style={{ color: 'white', fontSize: '40px', fontWeight: 300, wordWrap: 'break-word' }}>
-          at
+          <span className='poppins'  style={{ color: 'white', fontSize: '30px', fontWeight: 300, wordWrap: 'break-word' }}>
+          from
         </span>
         <span className='poppins'  style={{ color: 'white', fontSize: '40px', fontWeight: 300, wordWrap: 'break-word' }}>
           {' '}

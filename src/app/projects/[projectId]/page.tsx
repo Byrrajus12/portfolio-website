@@ -5,20 +5,25 @@ import Link from 'next/link';
 
 // projects data to fetch from
 const projects = [
-  { id: 1, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built-in SQLite3 module.', technologies: ['Python', 'SQLite', 'Data Structures'], imageUrl: '/sqlitepython.png', content: [
+  { id: 1, title: 'DebugMore', description: 'Engineered an advanced platform leveraging React, Node.js, and Flask to extract key skills from job descriptions and recommend coding problems', technologies: ['Python', 'Java', 'Node.js', 'Flask'], imageUrl: '/debugmore.png', content: [
+    'Developing an advanced platform using React, Node.js, and Python (Flask) to extract key skills from job descriptions and recommend coding problems to excel in interviews leveraging Hugging Face Transformers for high-accuracy NER.',
+    'Designed and implemented a real-time multi-language code execution engine integrated with the Piston API, supporting Python, C++, Java, and C, along with a dynamic code generation feature for job-specific skill prep.',
+    'Built a modular backend architecture with RESTful APIs, asynchronous processing, and robust CORS handling.',
+  ] },
+  { id: 2, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built-in SQLite3 module.', technologies: ['Python', 'SQLite', 'Data Structures'], imageUrl: '/sqlitepython.png', content: [
     'Developed a DBMS in Python that supports complex SQL operations without using SQL.',
     'Designed to ensure scalability and efficiency for processing large datasets.',
     'Conducted testing to verify functionality, ensuring the DBMS performs for a wide range of queries and edge cases.',
   ] },
-  { id: 2, title: 'Smart Grocery Manager', description: 'Developed a grocery app in Android Studio.', technologies: ['Java', 'Android', 'Firebase'], imageUrl: '/blockdiagram.png', content: [
+  { id: 3, title: 'Smart Grocery Manager', description: 'Developed a grocery app in Android Studio.', technologies: ['Java', 'Android', 'Firebase'], imageUrl: '/blockdiagram.png', content: [
     'Designed and implemented a user-friendly grocery management app with multi-screen navigation.',
     'Optimized user flow through intent-based transitions, allowing for smooth navigation.'
   ] },
-  { id: 3, title: 'Bug Squash', description: 'Designed and developed a complex Bug squash program.', technologies: ['C++', 'UI Design'], imageUrl: '/bugsquash.png', content: [
+  { id: 4, title: 'Bug Squash', description: 'Designed and developed a complex Bug squash program.', technologies: ['C++', 'UI Design'], imageUrl: '/bugsquash.png', content: [
     'Designed and developed a complex Bug Squash game from scratch, featuring a dynamic user interface that engages users in an interactive debugging experience.',
     'Developed functionality that require players to fix code snippets to successfully squash them, enhancing problem-solving skills.'
   ] },
-  { id: 4, title: 'saibyrraju.vercel.app', description: "My portfolio", technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'], imageUrl: '/websiteimg.png', content: [
+  { id: 5, title: 'saibyrraju.vercel.app', description: "My portfolio", technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'], imageUrl: '/websiteimg.png', content: [
     'Designed a responsive portfolio website to showcase my skills and projects.',
     'Next.js for server side rendering to ensure fast loading times and better performance.',
     'Styled with Tailwind CSS to create a modern, consistent user interface with minimal custom CSS.',

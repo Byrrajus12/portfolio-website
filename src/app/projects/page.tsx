@@ -2,10 +2,11 @@ import Link from 'next/link';
 import { Card } from '@/components/staticCard';
 
 const projects = [
-  { id: 1, title: 'Custom Python DBMS', description: 'Developed a custom Python module that emulates the behavior of Python’s built in SQLite3 module with complex SQL operations.' },
-  { id: 2, title: 'Smart Grocery Manager', description: 'Built a smart grocery management app focused on user experience and efficient grocery management.' },
-  { id: 3, title: 'Bug Squash', description: 'Designed and developed a complex Bug squash program with a dynamic user interface and a very engaging experience.' },
-  { id: 4, title: 'saibyrraju.vercel.app', description: "The website you're looking at" },
+  { id: 1, title: 'DebugMore', description: 'Engineered an advanced platform leveraging React, Node.js, and Flask to extract key skills from job descriptions and recommend coding problems.' },
+  { id: 2, title: 'Custom Python DBMS', description: 'Created a scalable Python module emulating SQLite3 functionality.' },
+  { id: 3, title: 'Smart Grocery Manager', description: 'Developed a scalable grocery management app in Java.' },
+  { id: 4, title: 'Bug Squash', description: 'Created a dynamic Bug Squash program featuring an engaging user interface for an interactive and immersive user experience' },
+  { id: 5, title: 'saibyrraju.vercel.app', description: "The website you're looking at" },
 ];
 
 export default function ProjectsPage() {
