@@ -7,7 +7,7 @@ export default function WorkPage() {
       company: 'Tech Mahindra',
       website: 'https://www.techmahindra.com/',
       duration: 'June 2024 - August 2024',
-      description: 'Developed and managed Power BI dashboards and Azure-based datasets for Jackson National, optimizing data-driven operations and resolving critical technical issues to enhance business insights and service delivery.',
+      description: 'Tracked key metrics at Jackson National by managing and optimizing cross sectional BI Charts to deliver essential revenue generating insights for stakeholders. ',
     },
     {
       title: 'Capstone App Developer',
