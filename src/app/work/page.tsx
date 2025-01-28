@@ -7,7 +7,7 @@ export default function WorkPage() {
       company: 'Tech Mahindra',
       website: 'https://www.techmahindra.com/',
       duration: 'June 2024 - August 2024',
-      description: 'Tracked key metrics at Jackson National by managing and optimizing cross sectional BI Charts to deliver essential revenue generating insights for stakeholders. ',
+      description: 'Optimized BI charts to track key metrics at Jackson National, delivering revenue-generating insights to stakeholders.',
     },
     {
       title: 'Capstone App Developer',
@@ -35,7 +35,7 @@ export default function WorkPage() {
       company: 'MSU',
       website: 'https://sle.msu.edu/',
       duration: 'May 2023- Present',
-      description: 'Provided customer service and clerical support to students and visitors, managing inquiries.',
+      description: 'Delivered exceptional customer service to residence hall students and visitors.',
     },
   ];
 
