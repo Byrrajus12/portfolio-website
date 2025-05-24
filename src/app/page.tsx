@@ -12,7 +12,7 @@ const dockItems = [
 ];
 
 export default function HomePage() {
-  const [introComplete, setIntroComplete] = useState(false); 
+  const [, setIntroComplete] = useState(false); 
 
   return (
     <>
