@@ -3,6 +3,13 @@ import "@/styles/globals.css"
 export default function WorkPage() {
   const experiences = [
     {
+      title: 'Software Engineer',
+      company: '7C Lingo',
+      website: 'https://www.7clingo.com/',
+      duration: 'Feb 2025 - Present',
+      description: 'Developed a real-time AI interviewer platform using WebRTC and Realtime API, optimizing interview flows with FSM logic for 90% reduction in screening time. Built interactive recruiter dashboard in Next.js/TypeScript with comprehensive analytics, and led QA testing across mobile/web platforms to ensure reliability.',
+    },
+    {
       title: 'IT Intern',
       company: 'Tech Mahindra',
       website: 'https://www.techmahindra.com/',
