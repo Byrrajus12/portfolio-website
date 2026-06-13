@@ -34,3 +34,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# impeccable design tooling
+/.impeccable/
+
+# design + product docs
+/DESIGN.md
+/PRODUCT.md
+
+# design renders / playwright screenshots
+/v6-*.png
+/shot-*.png
+/final-*.png
