@@ -1,48 +1,35 @@
 import { ReactNode } from 'react';
-import Head from 'next/head';
 import '../styles/globals.css';
-import Navbar from '../components/Navbar';
-import { Cutive_Mono, Poppins, Vast_Shadow } from 'next/font/google';
-import Particles from '@/components/particles'; 
+import Rail from '../components/Rail';
+import TimeWarmth from '../components/TimeWarmth';
+import { Bricolage_Grotesque, Spline_Sans_Mono } from 'next/font/google';
 
 export const metadata = {
   title: 'Sai Byrraju',
-  description: 'My personal portfolio',
+  description: 'AI product engineer. Voice AI, agent infrastructure, backend systems, operational tooling.',
 };
 
-const poppins = Poppins({
-      subsets: ['latin'],
-      display: 'swap',
-      variable: '--font-poppins',
-      weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-    });
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bricolage',
+  axes: ['opsz', 'wdth'],
+});
 
-const vast_shadow = Vast_Shadow({
-      subsets: ['latin'],
-      display: 'swap',
-      variable: '--font-vs',
-      weight: ['400']
-    });
-
-const cutive_mono = Cutive_Mono({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-cm',
-    weight: ['400']
+const splineMono = Spline_Sans_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-spline-mono',
+  weight: ['400', '500'],
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-    
-      </Head>
-      <body className="bg-black flex flex-col min-h-screen relative">
-        <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} staticity={60} ease={40} />
-        <Navbar />
-        <main className={`${poppins.variable} ${vast_shadow.variable} ${cutive_mono.variable}` } >{children}</main>
+    <html lang="en" className={`${bricolage.variable} ${splineMono.variable}`}>
+      <body>
+        <TimeWarmth />
+        <Rail />
+        <main className="lg:pl-56">{children}</main>
       </body>
     </html>
   );
