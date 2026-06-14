@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 import '../styles/globals.css';
 import Rail from '../components/Rail';
 import TimeWarmth from '../components/TimeWarmth';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Bricolage_Grotesque, Spline_Sans_Mono } from 'next/font/google';
 
 export const metadata = {
@@ -30,6 +32,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <TimeWarmth />
         <Rail />
         <main className="lg:pl-56">{children}</main>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

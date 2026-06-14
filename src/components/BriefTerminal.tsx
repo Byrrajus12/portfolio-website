@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
+import { track } from '@vercel/analytics';
 import { BRIEF_MODES, DEFAULT_MODE_ID, getMode } from '@/lib/brief-modes';
 
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
@@ -82,6 +83,7 @@ export default function BriefTerminal() {
       if (reduce) {
         setOutput(text);
         setPhase('idle');
+        track('brief_completed', { mode: id });
         return;
       }
 
@@ -93,6 +95,7 @@ export default function BriefTerminal() {
         await sleep(20); // stdout speed, not typewriter
       }
       setPhase('idle');
+      track('brief_completed', { mode: id });
     },
     [ensureFetch, reduce]
   );
@@ -105,6 +108,7 @@ export default function BriefTerminal() {
   const selectMode = (id: string) => {
     setMenuOpen(false);
     if (id === modeId && phase === 'idle') return;
+    track('brief_mode_switched', { mode: id });
     setModeId(id);
     run(id, false);
   };

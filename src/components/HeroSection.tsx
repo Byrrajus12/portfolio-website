@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import { track } from '@vercel/analytics';
 import BriefTerminal from './BriefTerminal';
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
@@ -50,16 +51,29 @@ export default function HeroSection() {
             className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-base"
             {...fadeUp(0.4)}
           >
-            <a href="#work" className="link">View work ↓</a>
+            <a
+              href="#work"
+              className="link"
+              onClick={() => track('cta_clicked', { cta: 'View work' })}
+            >
+              View work ↓
+            </a>
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="link"
+              onClick={() => track('cta_clicked', { cta: 'Resume' })}
             >
               Resume ↗
             </a>
-            <a href="#contact" className="link">Contact</a>
+            <a
+              href="#contact"
+              className="link"
+              onClick={() => track('cta_clicked', { cta: 'Contact' })}
+            >
+              Contact
+            </a>
           </motion.div>
         </div>
 
