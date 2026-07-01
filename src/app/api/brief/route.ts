@@ -49,6 +49,19 @@ function hourInTz(tz: string): number {
   return Number.isNaN(n) ? 12 : n % 24;
 }
 
+// Sanitize the visitor's city/region string before it touches the cache key or
+// the prompt. Allow only characters real place names use (Unicode letters,
+// spaces, hyphens, apostrophes, periods, commas); this strips newlines, braces,
+// backticks and other prompt-injection payloads. Collapse whitespace, trim, cap.
+const PLACE_ALLOWED = new RegExp("[^\\p{L} \\-'.,]", 'gu');
+function sanitizePlace(s: string): string {
+  return s
+    .replace(PLACE_ALLOWED, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 60);
+}
+
 // WMO weather code → short, plain phrase
 function describeWeather(code: number): string {
   if (code === 0) return 'clear and sunny';
@@ -138,7 +151,7 @@ export async function GET(req: NextRequest) {
     if (params.get('lon') !== null) lon = parseFloat(params.get('lon') ?? '');
   }
 
-  const place = city || region || country || '';
+  const place = sanitizePlace(city || region || country || '');
 
   // Cache: region + daypart granularity for the brief itself; global rate cap below
   const key = `${mode.id}|${dayPart(visHour)}|${place || 'unknown'}`;
@@ -204,9 +217,19 @@ export async function GET(req: NextRequest) {
     }
 
     const data = await res.json();
-    const text: string = data?.content?.[0]?.text?.trim();
-    if (!text) {
+    const raw: string = data?.content?.[0]?.text?.trim();
+    if (!raw) {
       return NextResponse.json({ error: 'empty' }, { status: 502 });
+    }
+
+    // Defense in depth: cap the model's output well above a ~140-word brief.
+    // Prefer trimming at a whitespace boundary; hard slice if there isn't one.
+    const MAX_TEXT = 1200;
+    let text = raw;
+    if (text.length > MAX_TEXT) {
+      const cut = text.slice(0, MAX_TEXT);
+      const sp = cut.lastIndexOf(' ');
+      text = (sp > 0 ? cut.slice(0, sp) : cut).trim();
     }
 
     cache.set(key, { text, expires: Date.now() + CACHE_TTL });

@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import { track } from '@vercel/analytics';
 import { BRIEF_MODES, DEFAULT_MODE_ID, getMode } from '@/lib/brief-modes';
@@ -260,24 +260,39 @@ export default function BriefTerminal() {
             <ul
               role="menu"
               aria-label="Brief mode"
-              className="absolute right-0 top-full mt-1.5 min-w-[140px] py-1 rounded-md border border-border z-20 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.6)]"
+              className="terminal-scroll absolute right-0 top-full mt-1.5 min-w-[200px] max-h-[13rem] overflow-y-auto py-1 rounded-md border border-border z-20 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.6)]"
               style={{ backgroundColor: 'var(--surface-2)' }}
             >
-              {BRIEF_MODES.map(m => (
-                <li key={m.id} role="none">
-                  <button
-                    role="menuitemradio"
-                    aria-checked={m.id === modeId}
-                    onClick={() => selectMode(m.id)}
-                    className={`w-full text-left px-3 py-1.5 font-mono text-xs transition-colors duration-150 hover:bg-[var(--border)] ${
-                      m.id === modeId ? 'text-ink' : 'text-muted'
-                    }`}
-                  >
-                    <span className="inline-block w-4">{m.id === modeId ? '✓' : ''}</span>
-                    {m.label}
-                  </button>
-                </li>
-              ))}
+              {BRIEF_MODES.map((m, i) => {
+                const newSection = i === 0 || BRIEF_MODES[i - 1].section !== m.section;
+                return (
+                  <Fragment key={m.id}>
+                    {newSection && (
+                      <li
+                        role="presentation"
+                        className={`px-3 pb-1 font-mono text-[10px] uppercase tracking-wider text-muted opacity-75 select-none ${
+                          i === 0 ? 'pt-1' : 'mt-1 pt-2 border-t border-border'
+                        }`}
+                      >
+                        {m.section}
+                      </li>
+                    )}
+                    <li role="none">
+                      <button
+                        role="menuitemradio"
+                        aria-checked={m.id === modeId}
+                        onClick={() => selectMode(m.id)}
+                        className={`w-full text-left px-3 py-1.5 font-mono text-xs transition-colors duration-150 hover:bg-[var(--border)] ${
+                          m.id === modeId ? 'text-ink' : 'text-muted'
+                        }`}
+                      >
+                        <span className="inline-block w-4">{m.id === modeId ? '✓' : ''}</span>
+                        {m.label}
+                      </button>
+                    </li>
+                  </Fragment>
+                );
+              })}
             </ul>
           )}
         </div>

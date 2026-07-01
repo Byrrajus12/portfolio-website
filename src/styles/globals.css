@@ -127,6 +127,16 @@ section[id] {
 .terminal-scroll::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
+/* Mode dropdown sits on --surface-2; match the scrollbar track so it blends */
+.terminal-scroll[role='menu'] {
+  scrollbar-color: var(--muted) var(--surface-2);
+}
+.terminal-scroll[role='menu']::-webkit-scrollbar-track {
+  background: var(--surface-2);
+}
+.terminal-scroll[role='menu']::-webkit-scrollbar-thumb {
+  border-color: var(--surface-2);
+}
 
 /* Terminal cursor */
 .terminal-cursor {
