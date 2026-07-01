@@ -10,7 +10,7 @@ const FEATURED = {
   org:    '7C Lingo',
   period: 'Feb 2025 – Dec 2025',
   description:
-    'Production Voice AI interviewing platform for candidate screening and recruiter workflows. Sole engineer for ten months: owned voice AI flows, recruiter dashboard, transcripts, AI scoring, email automation, prescreen flows, client rollout, and production reliability end to end.',
+    'Voice AI interviewing platform for candidate screening and recruiter workflows. Sole engineer for ten months: owned voice AI flows, recruiter dashboard, transcripts, AI scoring, email automation, prescreen flows, client rollout, and production reliability end to end.',
   metrics: [
     { value: '2,000+',           label: 'interviews processed' },
     { value: '16',              label: 'client locations' },

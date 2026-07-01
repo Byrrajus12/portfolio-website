@@ -16,6 +16,13 @@ const DOTS = [
 
 type Phase = 'typing' | 'streaming' | 'idle';
 
+const CMD_FONT = 13;
+const MAX_FONT = 13;
+const MIN_FONT = 10;
+const BASE_LEADING = 1.625;
+const MAX_LEADING = 2.0;
+const DESKTOP_QUERY = '(min-width: 1280px)';
+
 export default function BriefTerminal() {
   const reduce = useReducedMotion();
 
@@ -25,7 +32,13 @@ export default function BriefTerminal() {
   const [output, setOutput] = useState('');
   const [phase, setPhase] = useState<Phase>('typing');
   const [hasMore, setHasMore] = useState(false);
+  const [fontPx, setFontPx] = useState(MAX_FONT);
+  const [leading, setLeading] = useState(BASE_LEADING);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLDivElement>(null);
+  const measureTextRef = useRef<HTMLParagraphElement>(null);
+  // The current session's final command + brief, so a resize can re-fit
+  const sessionRef = useRef<{ cmd: string; text: string }>({ cmd: '', text: '' });
 
   // Resolved brief per mode: starts as fallback, upgraded by the API when it answers
   const briefs = useRef<Record<string, string>>(
@@ -46,6 +59,49 @@ export default function BriefTerminal() {
         if (data?.text) briefs.current[id] = data.text;
       })
       .catch(() => {});
+  }, []);
+
+  // Measure the brief off-screen in a hidden clone and pick the largest font
+  // (then the largest line-height) at which the whole session still fits the
+  // fixed body.
+  const fit = useCallback((cmd: string, text: string) => {
+    sessionRef.current = { cmd, text };
+    const box = scrollRef.current;
+    const clone = measureRef.current;
+    const textEl = measureTextRef.current;
+    if (!box || !clone || !textEl) return;
+
+    if (!window.matchMedia(DESKTOP_QUERY).matches) {
+      setFontPx(MAX_FONT);
+      setLeading(BASE_LEADING);
+      return;
+    }
+
+    const target = box.clientHeight; // fixed height incl. padding at xl+
+    if (target <= 0) return;
+    clone.querySelector('[data-cmd]')!.textContent = cmd || 'brief';
+    textEl.textContent = text || ' ';
+
+    let chosen = MIN_FONT;
+    for (let size = MAX_FONT; size >= MIN_FONT; size -= 0.5) {
+      textEl.style.fontSize = `${size}px`;
+      textEl.style.lineHeight = String(BASE_LEADING);
+      if (clone.offsetHeight <= target) {
+        chosen = size;
+        break;
+      }
+    }
+    textEl.style.fontSize = `${chosen}px`;
+
+    let leading = BASE_LEADING;
+    for (let l = BASE_LEADING; l <= MAX_LEADING; l += 0.02) {
+      textEl.style.lineHeight = String(l);
+      if (clone.offsetHeight <= target) leading = l;
+      else break;
+    }
+
+    setFontPx(chosen);
+    setLeading(leading);
   }, []);
 
   const run = useCallback(
@@ -80,6 +136,8 @@ export default function BriefTerminal() {
       if (!alive()) return;
       const text = briefs.current[id];
 
+      fit(cmd, text);
+
       if (reduce) {
         setOutput(text);
         setPhase('idle');
@@ -97,7 +155,7 @@ export default function BriefTerminal() {
       setPhase('idle');
       track('brief_completed', { mode: id });
     },
-    [ensureFetch, reduce]
+    [ensureFetch, reduce, fit]
   );
 
   useEffect(() => {
@@ -150,10 +208,16 @@ export default function BriefTerminal() {
     updateFade();
   }, [output, phase, updateFade, reduce]);
 
+  // Refit and recompute the fade when the viewport changes
   useEffect(() => {
-    window.addEventListener('resize', updateFade);
-    return () => window.removeEventListener('resize', updateFade);
-  }, [updateFade]);
+    const onResize = () => {
+      const { cmd, text } = sessionRef.current;
+      if (text) fit(cmd, text);
+      updateFade();
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [updateFade, fit]);
 
   const currentLabel = getMode(modeId)?.label ?? modeId;
 
@@ -162,7 +226,7 @@ export default function BriefTerminal() {
       role="region"
       aria-label="About Sai — interactive brief"
       className="w-full flex flex-col rounded-lg border border-border overflow-visible shadow-[0_16px_40px_-16px_rgba(0,0,0,0.55)]"
-      style={{ backgroundColor: 'var(--surface)' }}
+      style={{ backgroundColor: 'var(--surface)', ['--brief-body-h' as string]: '26rem' }}
     >
       {/* Title bar */}
       <div
@@ -219,14 +283,25 @@ export default function BriefTerminal() {
         </div>
       </div>
 
-      {/* Body — sized to its content so the whole session is visible at default
-          load; on short viewports the max-height caps it and the inner scroll +
-          bottom fade kick in as a fallback */}
+      {/* Body — fixed height on desktop (xl+) */}
       <div className="relative">
+        <div
+          ref={measureRef}
+          aria-hidden
+          className="terminal-scroll px-4 py-4 font-mono leading-relaxed absolute inset-x-0 top-0 invisible pointer-events-none"
+          style={{ fontSize: `${CMD_FONT}px` }}
+        >
+          <p>
+            <span>~ %</span> <span data-cmd />
+          </p>
+          <p ref={measureTextRef} className="mt-3 text-pretty whitespace-pre-wrap" />
+          <p className="mt-3">~ %</p>
+        </div>
         <div
           ref={scrollRef}
           onScroll={updateFade}
-          className="terminal-scroll px-4 py-4 font-mono text-[13px] leading-relaxed rounded-b-lg overflow-y-auto xl:max-h-[calc(100vh-6rem)]"
+          className="terminal-scroll px-4 py-4 font-mono leading-relaxed rounded-b-lg overflow-y-auto xl:h-[var(--brief-body-h)]"
+          style={{ fontSize: `${CMD_FONT}px` }}
           aria-busy={phase !== 'idle'}
         >
           <p>
@@ -235,7 +310,12 @@ export default function BriefTerminal() {
             {phase === 'typing' && <span className="terminal-cursor ml-px" aria-hidden />}
           </p>
           {output && (
-            <p className="mt-3 text-ink text-pretty whitespace-pre-wrap">{output}</p>
+            <p
+              className="mt-3 text-ink text-pretty whitespace-pre-wrap"
+              style={{ fontSize: `${fontPx}px`, lineHeight: leading }}
+            >
+              {output}
+            </p>
           )}
           {phase === 'idle' && (
             <p className="mt-3">
