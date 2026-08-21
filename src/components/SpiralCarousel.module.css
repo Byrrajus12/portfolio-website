@@ -1,0 +1,225 @@
+.scrollSection {
+  position: relative;
+  height: 280vh;
+  color: #f5f0e8;
+  background: #1a1410;
+}
+
+.stickyStage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(212, 160, 71, 0.07), transparent 29%),
+    #1a1410;
+}
+
+.stageCopy {
+  position: absolute;
+  z-index: 110;
+  top: 34px;
+  left: clamp(24px, 5vw, 72px);
+  right: clamp(24px, 5vw, 72px);
+  display: flex;
+  justify-content: space-between;
+  color: rgba(245, 240, 232, 0.55);
+  font-family: var(--font-spline-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.carousel {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  perspective-origin: 50% 48%;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 320px;
+  height: 230px;
+  pointer-events: auto;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.cardOrientation {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.cardSurface {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #3a3228;
+  border-radius: 20px;
+  background: #241e18;
+  pointer-events: none;
+}
+
+/* A single soft sheen suggests curvature without dividing the face into
+   separately composited 3D strips. */
+.cardSurface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.11),
+    transparent 18%,
+    transparent 76%,
+    rgba(0, 0, 0, 0.16)
+  );
+  pointer-events: none;
+}
+
+.visual {
+  --project-hue: 28;
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 30%, hsla(var(--project-hue), 80%, 72%, 0.85), transparent 30%),
+    linear-gradient(135deg, hsl(var(--project-hue), 53%, 38%), hsl(calc(var(--project-hue) + 42), 58%, 19%));
+}
+
+.visual::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.visualOrb {
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 45px hsla(var(--project-hue), 90%, 70%, 0.35);
+}
+
+.visualLine {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  right: 18%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.65);
+  transform: rotate(-18deg);
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 14px;
+  align-items: start;
+  min-height: 76px;
+  padding: 15px 17px;
+  border-top: 1px solid #3a3228;
+}
+
+.cardBody strong {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.cardBody span {
+  color: rgba(245, 240, 232, 0.62);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  padding: 7px 11px;
+  color: #1a1410;
+  background: #d4a047;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: opacity 120ms ease-out;
+}
+
+.tooltipVisible { opacity: 1; }
+
+.progressRail {
+  position: absolute;
+  z-index: 110;
+  right: clamp(24px, 5vw, 72px);
+  bottom: 34px;
+  width: 42px;
+  height: 1px;
+  overflow: hidden;
+  background: #3a3228;
+}
+
+.progressRail span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #d4a047;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+@media (max-width: 699px) {
+  .scrollSection { height: 265vh; }
+  .stageCopy { top: 22px; }
+  .stageCopy span:last-child { display: none; }
+  .card {
+    width: 200px;
+    height: 140px;
+  }
+  .cardSurface { border-radius: 14px; }
+  .visual::before { inset: 8px; border-radius: 8px; }
+  .visualOrb { width: 52px; height: 52px; }
+  .cardBody {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    min-height: 49px;
+    padding: 9px 11px;
+  }
+  .cardBody strong { font-size: 12px; }
+  .cardBody span {
+    overflow: hidden;
+    font-size: 9px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tooltip { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollSection { height: 100svh; }
+  .stickyStage { position: relative; }
+}
