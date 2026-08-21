@@ -55,8 +55,19 @@
   display: block;
   width: 100%;
   height: 100%;
+  transform-style: flat;
   transform-origin: center center;
   will-change: transform;
+  color: #f5f0e8;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cardOrientation:focus-visible {
+  outline: 2px solid #d4a047;
+  outline-offset: 4px;
 }
 
 .cardSurface {
@@ -68,23 +79,6 @@
   border: 1px solid #3a3228;
   border-radius: 20px;
   background: #241e18;
-  pointer-events: none;
-}
-
-/* A single soft sheen suggests curvature without dividing the face into
-   separately composited 3D strips. */
-.cardSurface::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.11),
-    transparent 18%,
-    transparent 76%,
-    rgba(0, 0, 0, 0.16)
-  );
   pointer-events: none;
 }
 
@@ -183,12 +177,9 @@
 
 .progressRail span {
   display: block;
-  width: 100%;
+  width: 45%;
   height: 100%;
   background: #d4a047;
-  transform: scaleX(0);
-  transform-origin: left center;
-  will-change: transform;
 }
 
 @media (max-width: 699px) {
@@ -220,6 +211,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scrollSection { height: 100svh; }
-  .stickyStage { position: relative; }
+  .scrollSection { height: 260vh; }
 }
