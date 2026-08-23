@@ -31,9 +31,9 @@ const SUPPORTING = [
   },
   {
     name:   'VoiceOps',
-    role:   'Hackathon build',
+    role:   'Google Rapid Agent Hackathon',
     org:    '',
-    period: '2025',
+    period: '2026',
     description:
       'AI SRE agent for incident response. Detects an alert, calls the on-call engineer, presents context, waits for verbal approval, then runs the remediation: detection to action without a keyboard.',
     stack: 'Python · Google ADK · Dynatrace MCP · Vapi · GitHub REST API · GitHub Actions · Google Cloud Run',
