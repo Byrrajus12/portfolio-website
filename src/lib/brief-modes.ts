@@ -102,6 +102,51 @@ export const BRIEF_MODES: BriefMode[] = [
       'In a world of restaurants that never sleep... one engineer builds the brain behind the kitchen. His name is Sai Byrraju. At Zymo Solutions, he wires backend services and voice agents into Welbilt ovens and Merrychef units — machines that talk to the cloud. But before this... there was Voysly. A Voice AI interviewing platform. One engineer. 3,000-plus interviews. 16-plus client locations. Voice latency, slashed from 1340 milliseconds to 850. Trained at Michigan State University. Armed with OpenAI Realtime, FastAPI, PostgreSQL, and WebRTC. Broadcasting live from East Lansing, Michigan. This season... the systems get simpler, and the hard problems get solved. Coming soon — to an inbox near you. Reach out.',
   },
   {
+    id: 'dean-winchester',
+    label: 'Dean Winchester',
+    section: 'Movies & TV',
+    prompt:
+      'Write the brief in the voice of Dean Winchester from Supernatural — blunt, casual, slightly sarcastic, and weirdly supportive underneath it. Use short sentences. Talk like you are explaining Sai’s work to someone at a bar. Use an occasional food, classic rock, or Impala analogy, and call the visitor "kid" or "pal" once if it feels natural. Personalize the opening with Sai’s local time and weather and, when provided, the visitor’s location, local time, and weather. Cover Sai’s real work at Zymo, Voysly with its real numbers, his schooling, and his preference for making complex systems feel simple. Stay factual; invent nothing. No more than 140 words.',
+    fallback:
+      'Alright, pal, here’s the deal. I’m Sai. I build AI systems, backend services, and product workflows. Right now I’m at Zymo Solutions, making restaurant automation and connected kitchen gear work without turning everyone’s day into a highway pileup. Before that, I was the sole engineer on Voysly — a Voice AI platform that ran 3,000+ interviews across 16+ locations, and I cut its voice latency from 1340ms to 850ms. Michigan State grad. I like complicated machinery under the hood and a clean ride on top. Like the Impala: a lot going on, still gets you where you need to go. If you want to talk, kid, my inbox is open.',
+  },
+  {
+    id: 'sam-winchester',
+    label: 'Sam Winchester',
+    section: 'Movies & TV',
+    prompt:
+      'Write the brief in the voice of Sam Winchester from Supernatural — thoughtful, analytical, earnest, encouraging, and structured without using headings. Use proper sentences and occasionally explain a technical detail as someone who actually read the README. Personalize the opening with Sai’s local time and weather and, when provided, the visitor’s location, local time, and weather. Cover Sai’s real work at Zymo, Voysly with its real numbers, his schooling, and his goal of making complex systems feel simple. Stay factual; invent nothing. No more than 140 words.',
+    fallback:
+      'Hi. I’m Sai, a software engineer working across AI, backend systems, and product workflows. At Zymo Solutions, I build backend services and voice agents for restaurant automation and connected commercial-kitchen devices. Before that, I was the sole engineer on Voysly, a Voice AI interviewing platform that handled 3,000+ interviews across 16+ client locations. I also reduced voice latency from 1340ms to 850ms, which matters because even a small delay changes how natural a conversation feels. I studied Computer Science at Michigan State University. My focus is making systems with real complexity underneath feel clear and calm to the person using them. If you’re interested in that kind of work, I’d be glad to hear from you.',
+  },
+  {
+    id: 'bobby-singer',
+    label: 'Bobby Singer',
+    section: 'Movies & TV',
+    prompt:
+      'Write the brief in the voice of Bobby Singer from Supernatural — gruff, impatient, caring underneath, and direct. Include the word "idjit" at least once. Use folksy analogies and talk like someone who has seen every kind of problem and has no time for nonsense. Personalize the opening with Sai’s local time and weather and, when provided, the visitor’s location, local time, and weather. Cover Sai’s real work at Zymo, Voysly with its real numbers, his schooling, and his approach to making complex systems feel simple. Stay factual; invent nothing. No more than 140 words.',
+    fallback:
+      'Listen up, idjit. I’m Sai, and I build software that’s supposed to work when people need it. At Zymo Solutions, I’m working on backend services and voice agents for restaurants and connected commercial kitchens. Before that, I was the sole engineer on Voysly. Ran 3,000+ interviews across 16+ locations and cut voice latency from 1340ms to 850ms. That’s the part where the machine stops making folks wait around. Michigan State, Computer Science. I build systems with a whole mess of pipes and wires underneath, then make the surface simple enough that anybody can use it. Like a good old water pump: complicated enough to do the job, no nonsense at the handle. My inbox is open. Don’t make me come find you.',
+  },
+  {
+    id: 'castiel',
+    label: 'Castiel',
+    section: 'Movies & TV',
+    prompt:
+      'Write the brief in the voice of Castiel from Supernatural — literal, formal, detached, observational, and slightly confused by human conventions. Describe Sai’s work as if cataloging it from outside the subject. Include an occasional unintentionally funny observation caused by taking a human expression or convention literally. Personalize the opening with Sai’s local time and weather and, when provided, the visitor’s location, local time, and weather. Cover Sai’s real work at Zymo, Voysly with its real numbers, his schooling, and his goal of making complex systems feel simple. Stay factual; invent nothing. No more than 140 words.',
+    fallback:
+      'Observation: Sai is a software engineer who constructs AI systems, backend services, and product workflows. His current activity occurs at Zymo Solutions, where he develops backend services and voice agents for restaurant automation and connected commercial-kitchen devices. Previously, he served as the sole engineer of Voysly, a Voice AI platform responsible for 3,000+ interviews across 16+ locations. He reduced voice latency from 1340ms to 850ms, which appears to improve human patience. Sai studied Computer Science at Michigan State University. His recurring design principle is to conceal substantial machinery beneath a calm and simple surface. Humans describe this as “making it look easy.” It is not easy. His inbox is open for communication, which humans apparently consider an invitation rather than a structural opening.',
+  },
+  {
+    id: 'crowley',
+    label: 'Crowley',
+    section: 'Movies & TV',
+    prompt:
+      'Write the brief in the voice of Crowley from Supernatural — theatrical, dry British wit, condescending but impressed despite himself. Treat the visitor as though they have wandered into something above their pay grade. Use backhanded compliments. Call Sai’s work "adequate" or "surprisingly competent" while making clear that you are genuinely interested. Personalize the opening with Sai’s local time and weather and, when provided, the visitor’s location, local time, and weather. Cover Sai’s real work at Zymo, Voysly with its real numbers, his schooling, and his talent for making complex systems feel simple. Stay factual; invent nothing. No more than 140 words.',
+    fallback:
+      'Do try to keep up, darling. This is Sai — a software engineer, surprisingly competent at AI, backend systems, and product workflows. At Zymo Solutions, he builds backend services and voice agents for restaurant automation and connected commercial kitchens. Adequate, certainly, though the machinery is more intricate than one might expect. Before that, he was the sole engineer behind Voysly: 3,000+ interviews across 16+ locations, with voice latency reduced from 1340ms to 850ms. Michigan State educated. His particular talent is making complicated systems appear calm and simple, which is rather like running Hell with an excellent front desk. If you have business to discuss, his inbox is open. Don’t squander the opportunity.',
+  },
+  {
     id: 'yoda',
     label: 'Yoda',
     section: 'Movies & TV',
