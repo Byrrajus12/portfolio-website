@@ -38,6 +38,31 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <div className="pt-12">
           <div className="space-y-14">
             <section aria-labelledby="why-heading"><h2 id="why-heading" className="text-2xl font-semibold text-ink">Why I built this</h2><p className="mt-5 text-base leading-relaxed text-muted">{project.why}</p></section>
+            {project.slug === 'mngr' && (
+              <div className="w-full max-w-[960px] overflow-hidden rounded-[14px] border border-[#3a3228]">
+                <video
+                  className="block w-full"
+                  src="/media/mngr-overview.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+            )}
+            {project.slug === 'voiceops' && (
+              <div className="aspect-video w-full max-w-[960px] overflow-hidden rounded-[14px] border border-[#3a3228]">
+                <iframe
+                  className="block h-full w-full"
+                  src="https://www.youtube.com/embed/eCR5JlrKiXg"
+                  title="VoiceOps overview"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            )}
             <section aria-labelledby="how-heading"><h2 id="how-heading" className="text-2xl font-semibold text-ink">How it works</h2><pre className="mt-6 overflow-x-auto border border-border bg-surface-2 p-5 font-mono text-xs leading-relaxed text-accent"><code>{project.architecture}</code></pre><div className="mt-6 space-y-5 text-base leading-relaxed text-muted">{project.howItWorks?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></section>
             {!!project.decisions?.length && <section aria-labelledby="decisions-heading"><h2 id="decisions-heading" className="text-2xl font-semibold text-ink">Decisions</h2><div className="mt-6 space-y-7">{project.decisions.map(({ choice, reasoning }) => <div key={choice}><h3 className="font-mono text-sm text-ink">{choice}</h3><p className="mt-2 text-base leading-relaxed text-muted">{reasoning}</p></div>)}</div></section>}
           </div>
