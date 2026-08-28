@@ -29,15 +29,6 @@ const SUPPORTING = [
       'Backend services and voice agents for restaurant automation. Connects Welbilt IoT kitchen devices (Convotherm ovens, Merrychef units) into one operational layer; staff check equipment status and route support tasks by voice.',
     stack: 'Python · FastAPI · PostgreSQL · AWS RDS · AWS ECS/Lambda · CloudWatch · KitchenConnect API · Vapi',
   },
-  {
-    name:   'VoiceOps',
-    role:   'Google Rapid Agent Hackathon',
-    org:    '',
-    period: '2026',
-    description:
-      'AI SRE agent for incident response. Detects an alert, calls the on-call engineer, presents context, waits for verbal approval, then runs the remediation: detection to action without a keyboard.',
-    stack: 'Python · Google ADK · Dynatrace MCP · Vapi · GitHub REST API · GitHub Actions · Google Cloud Run',
-  },
 ];
 
 const QUOTE = {
