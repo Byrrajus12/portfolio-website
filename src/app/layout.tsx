@@ -8,7 +8,7 @@ import { Bricolage_Grotesque, Spline_Sans_Mono } from 'next/font/google';
 
 export const metadata = {
   title: 'Sai Byrraju',
-  description: 'AI product engineer. Voice AI, agent infrastructure, backend systems, operational tooling.',
+  description: 'Builder of things. Voice AI, agent infrastructure, backend systems, operational tooling.',
 };
 
 const bricolage = Bricolage_Grotesque({
